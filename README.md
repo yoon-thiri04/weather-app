@@ -1,3 +1,4 @@
-## Weather App with Open Weather Api with Django
+## Weather App with Open Weather Api with Django 
 
 - Search Engine Updates need
+- UI update

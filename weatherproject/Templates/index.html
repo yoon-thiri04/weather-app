@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Index Page</title>
+</head>
+<style>
+
+</style>
+<body>
+<div class="container">
+<h1>Weather App</h1>
+    <div class="weatherform">
+     <form method="POST">
+         {% csrf_token %}
+         <input type="text" name="city" placeholder="Enter city">
+         <button type="submit">Search</button>
+     </form>
+    </div>
+    <h2>{{ temp }} C</h2>
+    <h3>{{ city }}</h3>
+    <p>{{ description }}</p>
+    <p>
+        <img src="http://openweathermap.org/img/w/{{ icon }}.png" width="100px">
+    </p>
+    <p>{{ day }}</p>
+{% if exception_occurred %}
+<script>
+    window.onload=function(){
+    alert("This City is not available to our API ");
+    }
+
+</script>
+{% endif %}
+    </div>
+</body>
+</html>
